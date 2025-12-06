@@ -5,7 +5,7 @@ import Button from '../components/UI/Button';
 
 const About: React.FC = () => {
   const experience = [
-    { year: "2023 - Presente", role: "Executive Manager Data Strategy", company: "NTT DATA Europe & Latam", desc: "Liderazgo de programas globales, CDO Journeys y LVM." },
+    { year: "2023 - 2025", role: "Executive Manager Data & AI Strategy", company: "NTT DATA Europe & Latam", desc: "Liderazgo de programas globales, CDO Journeys y LVM." },
     { year: "2020 - 2023", role: "Data Senior Service Manager", company: "Volkswagen Group España", desc: "Gestión CoE con 60+ personas. Reducción de costes y mejora de eficiencia." },
     { year: "2013 - 2020", role: "Data & Analytics Senior Manager", company: "SDG (Grupo Minsait)", desc: "Creación de PMO Data. Dirección iniciativas multi-industria." },
     { year: "2003 - 2013", role: "Delivery Manager", company: "T-Systems / gedas", desc: "Liderazgo portfolio Data Grupo VW. Certificación CMMI ML3." }
