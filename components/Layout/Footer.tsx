@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Linkedin, Mail, MapPin } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react'; // Quitamos Linkedin de aquí
+import { FaLinkedin } from "react-icons/fa"; // Añadimos esta línea
+
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-brand-dark text-white pt-16 pb-8">
+    <footer className="bg-[#0A2463] text-white pt-16 pb-8 relative overflow-hidden border-t border-white/10">
+    {/* Textura de fondo para fusión con CTA */}
+    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none"></div>  
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           
@@ -18,8 +22,8 @@ const Footer: React.FC = () => {
               Ejecución real para resultados medibles.
             </p>
             <div className="flex space-x-4 pt-4">
-              <a href="https://www.linkedin.com/in/walterolaizola/" target="_blank" rel="noopener noreferrer" className="bg-slate-800 p-2 rounded-full hover:bg-brand-cyan hover:text-brand-dark transition-all">
-                <Linkedin size={20} />
+              <a href="https://www.linkedin.com/in/walterolaizola/" target="_blank" rel="noopener noreferrer" className="bg-slate-800 p-2 rounded-full hover:bg-[#00D4FF] hover:text-white transition-all">
+                <FaLinkedin size={20} />
               </a>
               <a href="mailto:info@walolaizola.com" className="bg-slate-800 p-2 rounded-full hover:bg-brand-cyan hover:text-brand-dark transition-all">
                 <Mail size={20} />
@@ -45,7 +49,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-3">
               <li className="text-slate-400">Estrategia Data & AI</li>
               <li className="text-slate-400">Gobierno del Dato</li>
-              <li className="text-slate-400">Interim CDO Management</li>
+              <li className="text-slate-400">Interim CDO\CAIO Management</li>
               <li className="text-slate-400">Formación Executive</li>
             </ul>
           </div>
@@ -59,8 +63,10 @@ const Footer: React.FC = () => {
                 <span className="text-slate-400">info@walolaizola.com</span>
               </li>
               <li className="flex items-start">
-                <Linkedin className="w-5 h-5 text-brand-cyan mr-3 mt-1 shrink-0" />
-                <span className="text-slate-400">/in/walterolaizola</span>
+                  <div className="text-[#00D4FF] mr-3 mt-1 shrink-0">
+                    <FaLinkedin size={20} />
+                  </div>
+                  <span className="text-slate-400">/in/walterolaizola</span>
               </li>
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 text-brand-cyan mr-3 mt-1 shrink-0" />
