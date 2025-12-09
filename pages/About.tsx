@@ -133,7 +133,6 @@ const About: React.FC = () => {
 
 
       {/* 2. Consultoras - Clientes*/}           
-
       {/* --- INICIO SECCIÓN LOGOS (Con Estilos y Corrección de Nombres) --- */}
       
       {/* 1. Estilos CSS inyectados localmente para asegurar la animación */}
