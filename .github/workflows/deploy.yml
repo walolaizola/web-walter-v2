@@ -51,5 +51,6 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: './dist/'
         server-dir: 'domains/walolaizola.com/public_html/'
+        dangerous-clean-slate: true  # ⚠️ Borra todo y sube de nuevo
         state-name: '.ftp-deploy-sync-state.json'
         log-level: verbose
