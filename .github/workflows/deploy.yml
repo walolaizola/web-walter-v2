@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch: # <--- ¡ESTO ACTIVA EL BOTÓN MANUAL!
+  workflow_dispatch:
 
 jobs:
   web-deploy:
@@ -25,6 +25,24 @@ jobs:
     - name: 🏗️ Build Project
       run: npm run build
 
+    # VERSIÓN ANTERIOR (sin verificación ni ajustes)
+    # - name: 📂 Sync files to Hostinger
+    #   uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+    #   with:
+    #     server: ${{ secrets.FTP_SERVER }}
+    #     username: ${{ secrets.FTP_USERNAME }}
+    #     password: ${{ secrets.FTP_PASSWORD }}
+    #     local-dir: './dist/'
+    #     server-dir: './domains/walolaizola.com/public_html/'
+
+    # NUEVA VERSIÓN (con verificación y ruta corregida)
+    - name: 📋 Verify build output
+      run: |
+        echo "Built files:"
+        ls -la ./dist/
+        echo "File count:"
+        find ./dist -type f | wc -l
+
     - name: 📂 Sync files to Hostinger
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
@@ -32,4 +50,6 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: './dist/'
-        server-dir: './domains/walolaizola.com/public_html/'
+        server-dir: 'public_html/'
+        state-name: '.ftp-deploy-sync-state.json'
+        log-level: verbose
