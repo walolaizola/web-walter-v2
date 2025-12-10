@@ -50,8 +50,9 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: './dist/'
-        server-dir: './'  # o elimina esta línea completamente
+        #server-dir: './'  # o elimina esta línea completamente
         #server-dir: 'domains/walolaizola.com/public_html/'
+        server-dir: '../domains/walolaizola.com/public_html/'  # ⬅️ Esto sube un nivel
         dangerous-clean-slate: true  # ⚠️ Borra todo y sube de nuevo
         state-name: '.ftp-deploy-sync-state.json'
         log-level: verbose
