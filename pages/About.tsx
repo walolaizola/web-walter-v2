@@ -603,6 +603,24 @@ const About: React.FC = () => {
       </section>
       {/* FIN 6. SECCIÓN STACK TECNOLÓGICO */}
 
+
+      {/* 8. Values - Cómo Trabajo*/}
+      <section className2="py-20 bg-brand-dark text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+           <h2 className="text-3xl font-bold text-center mb-16">Cómo Trabajo</h2>
+           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+             {VALUES.map((val, i) => (
+               <div key={i} className="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:bg-slate-750 transition-colors">
+                 <h3 className="font-bold text-brand-cyan mb-3">{val.title}</h3>
+                 <p className="text-slate-300 text-sm leading-relaxed">{val.description}</p>
+               </div>
+             ))}
+           </div>
+        </div>
+      </section>
+      {/* FIN 8. Values - Cómo Trabajo*/}
+
+
       {/* 7. CTA FINAL */}
       <section className="cta py-24 bg-gray-50 text-center relative overflow-hidden">
         {/* Decoración de fondo sutil */}
@@ -637,21 +655,7 @@ const About: React.FC = () => {
       {/* FIN 7. CTA FINAL */}
 
 
-      {/* 8. Values - Cómo Trabajo*/}
-      <section className="py-20 bg-brand-dark text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-           <h2 className="text-3xl font-bold text-center mb-16">Cómo Trabajo</h2>
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-             {VALUES.map((val, i) => (
-               <div key={i} className="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:bg-slate-750 transition-colors">
-                 <h3 className="font-bold text-brand-cyan mb-3">{val.title}</h3>
-                 <p className="text-slate-300 text-sm leading-relaxed">{val.description}</p>
-               </div>
-             ))}
-           </div>
-        </div>
-      </section>
-      {/* FIN 8. Values - Cómo Trabajo*/}
+
 
     </div>
   );

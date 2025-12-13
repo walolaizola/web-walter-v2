@@ -459,7 +459,7 @@ const Home: React.FC = () => {
           <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
             No necesitas más herramientas, necesitas resultados.
             <br className="hidden md:block" />
-            Agenda 30 minutos conmigo y definamos la hoja de ruta para desbloquear el valor de tus datos.
+            Agenda 30 minutos conmigo y definamos la hoja de ruta para activar tus datos y acelerar resultados con IA.
           </p>
           
           {/* 3. Doble Botón: Acción Principal vs Exploración */}
