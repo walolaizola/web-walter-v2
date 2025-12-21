@@ -32,7 +32,7 @@ const Training: React.FC = () => {
             <span className="bg-brand-orange text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-block">
               Bonificable 100% FUNDAE
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Formación Ejecutiva Data & AI</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Formación Ejecutiva Data & IA</h1>
             <p className="text-xl text-slate-300 mb-8">
               Tus managers no necesitan aprender a programar en Python. 
               Necesitan entender cómo usar los datos para tomar mejores decisiones.

@@ -73,7 +73,7 @@ const Home: React.FC = () => {
 
               <div className="flex flex-col sm:flex-row gap-8 sm:gap-16 items-center w-full sm:w-auto mb-12">
                 <Button to="/contact" variant="accent" className="text-lg px-10 py-4 shadow-xl shadow-brand-orange/20">
-                  Agendar Sesión Estratégica
+                  Solicitar Sesión Estratégica
                 </Button>
 
                 {/* ENLACE SECUNDARIO */}
@@ -179,7 +179,7 @@ const Home: React.FC = () => {
               ¿Te suena familiar?
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              No estás solo. Estos son los desafíos críticos que escucho cada semana en despachos de CEOs y líderes de Data & AI:
+              No estás solo. Estos son los desafíos críticos que escucho cada semana en despachos de CxOs y líderes de Data & AI:
             </p>
           </div>
 
@@ -468,7 +468,7 @@ const Home: React.FC = () => {
               to="/contact" 
               className="inline-flex items-center justify-center bg-[#FF6B35] text-white text-lg font-bold px-10 py-4 rounded-lg shadow-2xl hover:bg-[#e55a2b] hover:scale-105 transition-all duration-300"
             >
-              Agendar Sesión Estratégica
+              Solicitar Sesión Estratégica
             </Link>
             
             <Link 

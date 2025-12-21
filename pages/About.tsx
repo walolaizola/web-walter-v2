@@ -163,7 +163,7 @@ const About: React.FC = () => {
 
       {/* 2. Lógica del componente */}
       {(() => {
-        // LISTA 1: Top Tier / Estratégicos
+        // LISTA 1: Clientes Top Tier / Estratégicos
         const logosTier1 = [
           { file: 'Volkswagen.png', alt: 'Volkswagen' },
           { file: 'SEAT.png', alt: 'SEAT' },
@@ -180,8 +180,7 @@ const About: React.FC = () => {
           { file: 'boehringer.webp', alt: 'Boehringer Ingelheim' },
         ];
 
-        // LISTA 2: Pharma, Público y Otros
-        // NOTA: He corregido mayúsculas/minúsculas según tu captura de pantalla
+        // LISTA 2: Clientes Pharma, Público y Otros
         const logosTier2 = [
           { file: 'ULMA.png', alt: 'ULMA' },
           { file: 'Navantia.png', alt: 'Navantia' },
@@ -205,19 +204,41 @@ const About: React.FC = () => {
         return (
           <section className="trusted-by py-16 bg-gray-50">
             <div className="container mx-auto px-4">
-              
+
               {/* --- PEDIGRÍ (Consultoras) --- */}
-              <div className="mb-12 text-center">
-                <p className="text-xs font-bold tracking-widest text-gray-500 uppercase mb-6">
-                  Ex-Executive Manager en las mejores consultoras de Data & AI
+              <div className="mb-20 text-center">
+                {/* AJUSTE: Subimos a 13px y mantenemos el tracking para máxima elegancia y legibilidad */}
+                <p className="text-[15px] font-bold tracking-[0.2em] text-brand-dark/70 uppercase mb-8">
+                  EX-EXECUTIVE MANAGER EN LAS MEJORES CONSULTORAS DE DATA & AI
                 </p>
-                <div className="flex justify-center items-center gap-8 flex-wrap">
-                  {/* Asegúrate de que estos logos existan en assets/logos/Consultoras/ */}
-                  <img src="assets/logos/Consultoras/NTT-DATA-Future-Blue-RGB.png" alt="NTT DATA" className="h-8 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-                  <img src="assets/logos/Consultoras/SDG Group - Logo.png" alt="SDG Group" className="h-8 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-                  <img src="assets/logos/Consultoras/T-Systems_Logo_2024.svg.png" alt="T-Systems" className="h-8 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+
+                <div className="flex justify-center items-center gap-12 md:gap-24 flex-wrap px-4">
+                  
+                  {/* 1. NTT DATA  */}
+                  <img 
+                    src="assets/logos/Consultoras/NTT-DATA-Future-Blue-RGB.png" 
+                    alt="NTT DATA" 
+                    className="h-16 md:h-20 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
+                  />
+
+                  {/* 2. SDG Group */}
+                  <img 
+                    src="assets/logos/Consultoras/SDG Group - Logo.png" 
+                    alt="SDG Group" 
+                    className="h-18 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
+                  />
+
+                  {/* 3. T-Systems */}
+                  <img 
+                    src="assets/logos/Consultoras/T-Systems_Logo_2024.svg.png" 
+                    alt="T-Systems" 
+                    className="h-8 md:h-11 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
+                  />
+
                 </div>
-              </div>
+              </div>      
+              {/* --- FIN PEDIGRÍ (Consultoras) --- */}
+
 
               <hr className="border-t border-gray-200 my-10 w-2/3 mx-auto" />
 
@@ -604,59 +625,57 @@ const About: React.FC = () => {
       {/* FIN 6. SECCIÓN STACK TECNOLÓGICO */}
 
 
-      {/* 8. Values - Cómo Trabajo*/}
-      <section className2="py-20 bg-brand-dark text-white">
+{/* 7. Values - Cómo Trabajo (Fondo Azul Sólido) */}
+      {/* Usamos el hex exacto #0A2463 para asegurar el color */}
+      <section className="py-20 bg-[#0A2463] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
            <h2 className="text-3xl font-bold text-center mb-16">Cómo Trabajo</h2>
            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
              {VALUES.map((val, i) => (
                <div key={i} className="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:bg-slate-750 transition-colors">
-                 <h3 className="font-bold text-brand-cyan mb-3">{val.title}</h3>
+                 <h3 className="font-bold text-[#00D4FF] mb-3">{val.title}</h3>
                  <p className="text-slate-300 text-sm leading-relaxed">{val.description}</p>
                </div>
              ))}
            </div>
         </div>
       </section>
-      {/* FIN 8. Values - Cómo Trabajo*/}
+      {/* FIN 7. Values - Cómo Trabajo*/}
 
 
-      {/* 7. CTA FINAL */}
-      <section className="cta py-24 bg-gray-50 text-center relative overflow-hidden">
-        {/* Decoración de fondo sutil */}
-        <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#00D4FF] to-[#0A2463]"></div>
+      {/* 8. CTA FINAL - NIVEL DIOS (Gradiente) */}
+      {/* Usamos un degradado desde tu azul (#0A2463) hacia uno casi negro (#020617) */}
+      <section className="cta py-24 bg-gradient-to-b from-[#0A2463] to-[#020617] text-center relative overflow-hidden">
+        
+        {/* Separador sutil */}
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/2 border-t border-slate-700/30"></div>
         
         <div className="container mx-auto px-4 max-w-3xl relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0A2463] mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             ¿Necesitas resultados, no solo diagnósticos?
           </h2>
-          <p className="text-lg text-gray-600 mb-10 leading-relaxed">
+          <p className="text-lg text-slate-300 mb-10 leading-relaxed">
             Ya conoces mi trayectoria y cómo trabajo. Si buscas a alguien que se integre en tu equipo, entienda el negocio y ejecute soluciones de datos e IA reales, estoy listo.
           </p>
           
           <div className="flex justify-center">
-            {/* USAMOS EL COMPONENTE LINK DE REACT ROUTER 
-               - Ruta corregida a "/contact" (coincide con tu archivo Contact.tsx)
-               - Texto más directo y menos intimidante
-            */}
+            {/* Botón Naranja con sombra brillante */}
             <Link 
               to="/contact" 
-              className="inline-block bg-[#FF6B35] text-white font-bold py-4 px-12 rounded-lg hover:bg-[#e55a2b] transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 text-lg"
+              className="inline-block bg-[#FF6B35] text-white font-bold py-4 px-12 rounded-lg hover:bg-[#e55a2b] transition-all shadow-[0_0_20px_rgba(255,107,53,0.3)] hover:shadow-[0_0_30px_rgba(255,107,53,0.5)] hover:-translate-y-1 text-lg"
             >
               Hablemos de tus Retos
             </Link>
           </div>
           
-          <p className="mt-6 text-sm text-gray-400">
+          <p className="mt-8 text-sm text-slate-500 font-medium">
             Respuesta garantizada en menos de 24h
           </p>
         </div>
       </section>
-      {/* FIN 7. CTA FINAL */}
+      {/* FIN 8. CTA FINAL */}
 
-
-
-
+ 
     </div>
   );
 };

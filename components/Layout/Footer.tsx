@@ -10,25 +10,39 @@ const Footer: React.FC = () => {
     {/* Textura de fondo para fusión con CTA */}
     <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none"></div>  
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.4fr_0.6fr_1.2fr_0.8fr] gap-8 mb-8"> 
           {/* Brand Column */}
           <div className="space-y-4">
             <h3 className="text-2xl font-bold text-white">
               WALTER<span className="text-brand-cyan">OLAIZOLA</span>
             </h3>
             <p className="text-slate-400 text-sm leading-relaxed">
-              Transformación organizacional basada en datos e Inteligencia Artificial. 
-              Ejecución real para resultados medibles.
+              Transformación organizacional basada en Datos e IA. 
+              Conectaremos capacidad tecnológica con ventaja competitiva real.
             </p>
-            <div className="flex space-x-4 pt-4">
-              <a href="https://www.linkedin.com/in/walterolaizola/" target="_blank" rel="noopener noreferrer" className="bg-slate-800 p-2 rounded-full hover:bg-[#00D4FF] hover:text-white transition-all">
+
+            {/* Brand Column - Iconos con efecto de elevación y diseño squircle */}
+            <div className="flex gap-4 pt-2">
+              {/* LinkedIn - Estilo Premium Squircle */}
+              <a 
+                href="https://www.linkedin.com/in/walterolaizola/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center justify-center w-11 h-11 rounded-xl bg-white/5 border border-white/10 text-slate-300 hover:text-brand-dark hover:bg-brand-cyan hover:border-brand-cyan transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-brand-cyan/20"
+              >
                 <FaLinkedin size={20} />
               </a>
-              <a href="mailto:info@walolaizola.com" className="bg-slate-800 p-2 rounded-full hover:bg-brand-cyan hover:text-brand-dark transition-all">
+
+              {/* Email - Estilo Premium Squircle */}
+              <a 
+                href="mailto:info@walolaizola.com" 
+                className="flex items-center justify-center w-11 h-11 rounded-xl bg-white/5 border border-white/10 text-slate-300 hover:text-brand-dark hover:bg-brand-cyan hover:border-brand-cyan transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-brand-cyan/20"
+              >
                 <Mail size={20} />
               </a>
             </div>
+
+
           </div>
 
           {/* Quick Links */}
@@ -39,7 +53,6 @@ const Footer: React.FC = () => {
               <li><Link to="/consultoria" className="text-slate-400 hover:text-brand-cyan transition-colors">Consultoría</Link></li>
               <li><Link to="/formacion" className="text-slate-400 hover:text-brand-cyan transition-colors">Formación</Link></li>
               <li><Link to="/sobre-mi" className="text-slate-400 hover:text-brand-cyan transition-colors">Sobre Mí</Link></li>
-              <li><Link to="/contact" className="text-slate-400 hover:text-brand-cyan transition-colors">Contacto</Link></li>
             </ul>
           </div>
 
@@ -49,8 +62,8 @@ const Footer: React.FC = () => {
             <ul className="space-y-3">
               <li className="text-slate-400">Estrategia Data & AI</li>
               <li className="text-slate-400">Gobierno del Dato</li>
-              <li className="text-slate-400">Interim CDO\CAIO Management</li>
-              <li className="text-slate-400">Formación Executive</li>
+              <li className="text-slate-400">Interim CDO / CAIO Management</li>
+              <li className="text-slate-400">Formación Data, IA & Productividad</li>
             </ul>
           </div>
 
@@ -76,7 +89,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-slate-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
+        <div className="border-t border-slate-800 pt-1 mt-1 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
           <p>© {new Date().getFullYear()} Walter Olaizola. Todos los derechos reservados.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="/privacidad" className="cursor-pointer hover:text-brand-cyan">Política de Privacidad</Link>
