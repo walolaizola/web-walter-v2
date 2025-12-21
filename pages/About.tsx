@@ -136,30 +136,46 @@ const About: React.FC = () => {
       {/* --- INICIO SECCIÓN LOGOS (Con Estilos y Corrección de Nombres) --- */}
       
       {/* 1. Estilos CSS inyectados localmente para asegurar la animación */}
-      <style>{`
-        @keyframes scrollLeft {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        @keyframes scrollRight {
-          0% { transform: translateX(-50%); }
-          100% { transform: translateX(0); }
-        }
-        .animate-scroll-left {
-          animation: scrollLeft 45s linear infinite;
-        }
-        .animate-scroll-right {
-          animation: scrollRight 50s linear infinite;
-        }
-        .hover-pause:hover {
-          animation-play-state: paused;
-        }
-        /* Máscara para difuminar los bordes */
-        .mask-gradient {
-          mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-          -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-        }
-      `}</style>
+        <style>{`
+          @keyframes scrollLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          @keyframes scrollRight {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+          }
+
+          /* 1. Velocidad en Móvil y Aceleración GPU */
+          .animate-scroll-left {
+            animation: scrollLeft 25s linear infinite; /* Más rápido en móvil */
+            will-change: transform; /* Fuerza el uso de GPU para mayor fluidez  */
+          }
+          .animate-scroll-right {
+            animation: scrollRight 25s linear infinite; /* Más rápido en móvil  */
+            will-change: transform;
+          }
+
+          /* 2. Velocidad en Portátil (Desktop) */
+          @media (min-width: 768px) {
+            .animate-scroll-left {
+              animation-duration: 45s; /* Mantiene tu velocidad original en PC */
+            }
+            .animate-scroll-right {
+              animation-duration: 50s; /* Mantiene tu velocidad original en PC */
+            }
+          }
+
+          .hover-pause:hover {
+            animation-play-state: paused;
+          }
+
+          /* Máscara para difuminar los bordes */
+          .mask-gradient {
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+          }
+        `}</style>
 
       {/* 2. Lógica del componente */}
       {(() => {
@@ -185,8 +201,8 @@ const About: React.FC = () => {
           { file: 'ULMA.png', alt: 'ULMA' },
           { file: 'Navantia.png', alt: 'Navantia' },
           { file: 'Correos.png', alt: 'Correos' },
-          { file: 'Ajuntament de Barcelona.png', alt: 'Ajuntament de Barcelona' },
-          { file: 'Fira Barcelona.png', alt: 'Fira Barcelona' },
+          { file: 'AjuntamentBarcelona.png', alt: 'Ajuntament de Barcelona' },
+          { file: 'FiraBarcelona.png', alt: 'Fira Barcelona' },
           { file: 'Grupo_Godo.png', alt: 'Grupo Godó' },
           { file: 'Anticipa.svg', alt: 'Anticipa' }, // Corregido .svg
           { file: 'AC-hoteles.webp', alt: 'AC Hoteles' },
@@ -200,6 +216,9 @@ const About: React.FC = () => {
           { file: 'caritas.png', alt: 'Cáritas' },
           { file: 'Ingecid.png', alt: 'Ingecid' },
         ];
+      {/* FIN 2. Clientes*/}   
+
+
 
         return (
           <section className="trusted-by py-16 bg-gray-50">

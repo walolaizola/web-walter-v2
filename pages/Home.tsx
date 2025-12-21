@@ -131,41 +131,61 @@ const Home: React.FC = () => {
           </div>
         </div>
 
-        {/* Bloque de Logos integrado (Sin cambios, mantiene la posición subida) */}
+
+        {/* Bloque de Logos con Aceleración GPU y Color Real al Hover */}
         <div className="w-full relative z-20 mt-16 pb-8">
-            <p className="text-center text-xs font-bold text-white/40 uppercase tracking-[0.2em] mb-8">
+            <p className="text-center text-[10px] font-bold text-white/40 uppercase tracking-[0.3em] mb-10">
               Impacto real en líderes de industria
             </p>
 
             <style>{`
-              @keyframes scrollLeft { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-              .animate-scroll-left { animation: scrollLeft 60s linear infinite; }
-              .mask-gradient-dark { 
-                mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); 
-                -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); 
+              @keyframes scrollLeft { 
+                0% { transform: translateX(0); } 
+                100% { transform: translateX(-50%); } 
+              }
+              /* Duración adaptativa: 25s en móvil para fluidez, 60s en desktop para elegancia */
+              .animate-scroll-left { 
+                animation: scrollLeft 25s linear infinite; 
+                will-change: transform; /* Fuerza el uso de GPU para evitar lag en móvil [cite: 16-12-2025] */
+              }
+              @media (min-width: 768px) {
+                .animate-scroll-left { animation-duration: 60s; }
+              }
+              .hover-pause:hover { animation-play-state: paused; }
+              .mask-gradient-premium { 
+                mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); 
+                -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); 
               }
             `}</style>
 
-            <div className="w-full overflow-hidden relative py-2 mask-gradient-dark">
-                <div className="flex items-center gap-16 whitespace-nowrap animate-scroll-left">
-                  {[
-                    "Volkswagen.png", "BancSabadell.png", "Naturgy.png", "Ferrovial.png",
-                    "Sanofi.png", "Allianz.png", "SEAT.png", "Zurich.png",
-                    "Janssen.png", "ULMA.png", "Continental.png", "Correos.png",
-                    "Volkswagen.png", "BancSabadell.png", "Naturgy.png", "Ferrovial.png",
-                    "Sanofi.png", "Allianz.png", "SEAT.png", "Zurich.png",
-                    "Janssen.png", "ULMA.png", "Continental.png", "Correos.png"
-                  ].map((logo, index) => (
-                    <img
-                      key={index}
-                      src={`assets/logos/Clientes/${logo}`}
-                      alt="Cliente"
-                      className="h-10 w-auto max-w-[140px] object-contain brightness-0 invert opacity-50 hover:opacity-100 transition-all duration-300"
-                    />
-                  ))}
+            <div className="w-full overflow-hidden relative py-4 mask-gradient-premium">
+                <div className="flex items-center gap-12 md:gap-20 whitespace-nowrap animate-scroll-left hover-pause">
+                    {/* Lógica de duplicación para bucle infinito perfecto */}
+                    {[...Array(2)].map((_, i) => (
+                      <React.Fragment key={i}>
+                        {[
+                          "Volkswagen.png", "SEAT.png", "BancSabadell.png", "Allianz.png", 
+                          "Zurich.png", "Naturgy.png", "Ferrovial.png", "Continental.png", 
+                          "Sanofi.png", "Janssen.png", "Anticipa.svg", "Correos.png", "Grupo_Godo.png", "ULMA.png"
+                        ].map((logo, index) => (
+                          <img
+                            key={`${i}-${index}`}
+                            src={`assets/logos/Clientes/${logo}`}
+                            alt="Cliente de Walter Olaizola"
+                            /* - brightness-0 invert: Convierte cualquier color en blanco puro (Uniformidad total) [cite: 16-12-2025]
+                              - opacity-30: Los deja en un segundo plano elegante [cite: 16-12-2025]
+                              - hover:filter-none: Elimina el filtro blanco y recupera el color real [cite: 16-12-2025]
+                            */
+                            className="h-10 md:h-12 w-auto max-w-[120px] md:max-w-[150px] object-contain brightness-0 invert opacity-30 transition-all duration-500 hover:filter-none hover:opacity-100"
+                          />
+                        ))}
+                      </React.Fragment>
+                    ))}
                 </div>
             </div>
         </div>
+        {/* FIN Bloque de Logos */}
+
       </section>
 
 
