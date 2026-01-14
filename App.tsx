@@ -9,6 +9,8 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
 import Legal from './pages/Legal';
+import ResourcePage from './pages/ResourcePage';
+
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -34,6 +36,7 @@ const App: React.FC = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacidad" element={<Privacy />} />
             <Route path="/legal" element={<Legal />} />
+            <Route path="/recursos/:id" element={<ResourcePage />} />
           </Routes>
         </main>
         <Footer />
