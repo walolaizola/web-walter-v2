@@ -3,8 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 
 // 1. DICCIONARIO DE RECURSOS: Aquí es donde añadirás tus nuevos links de Notion
 const NOTION_PAGES: Record<string, string> = {
-  'prompts-data-leaders': 'https://grove-lancer-801.notion.site/7-Prompts-para-Data-Leaders-Enero-2026-Post-Linkedin-2e6fa17bd8c6806a9db9e79605387142?source=copy_link', // Sustituye por tu URL real
-  'estrategia-ia-2026': 'https://walter-olaizola.notion.site/Tu-Pagina-2...', // Sustituye por tu URL real
+  'prompts-data-leaders': 'https://grove-lancer-801.notion.site/7-Prompts-para-Data-Leaders-Enero-2026-Post-Linkedin-2e6fa17bd8c6806a9db9e79605387142', // Sustituye por tu URL real
+  'prompts-data-leadersOLD': 'https://grove-lancer-801.notion.site/7-Prompts-para-Data-Leaders-Enero-2026-Post-Linkedin-2e6fa17bd8c6806a9db9e79605387142?source=copy_link', // Sustituye por tu URL real
   'guia-n8n-consultores': 'https://walter-olaizola.notion.site/Tu-Pagina-3...', // Sustituye por tu URL real
 };
 
