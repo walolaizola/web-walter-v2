@@ -1,10 +1,20 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 
+//COPIAR EL ENLACE QUE ME DA NOTION quitando la parte de ?source=copy_link
 const NOTION_PAGES: Record<string, string> = {
   'prompts-data-leaders': 'https://grove-lancer-801.notion.site/7-Prompts-para-Data-Leaders-Enero-2026-Post-Linkedin-2e6fa17bd8c6806a9db9e79605387142', //ANADIR 1 LINEA POR CADA ENTRADA
+  'prueba': 'https://grove-lancer-801.notion.site/Industrias-de-las-empresas-en-las-que-trabaj-2e1fa17bd8c680e2bb09ea391f82414e', //COPIAR ESTA LÍNEA POR CADA ENTRADA Y PERSONALIZARLA
+  'TITULO URL': 'https://grove-lancer-801.notion.site/INDICAR EL ENLACE COMPLETO', //COPIAR ESTA LÍNEA POR CADA ENTRADA Y PERSONALIZARLA
+  'TITULO URL': 'https://grove-lancer-801.notion.site/INDICAR EL ENLACE COMPLETO', //COPIAR ESTA LÍNEA POR CADA ENTRADA Y PERSONALIZARLA
+  'TITULO URL': 'https://grove-lancer-801.notion.site/INDICAR EL ENLACE COMPLETO', //COPIAR ESTA LÍNEA POR CADA ENTRADA Y PERSONALIZARLA
+  'TITULO URL': 'https://grove-lancer-801.notion.site/INDICAR EL ENLACE COMPLETO', //COPIAR ESTA LÍNEA POR CADA ENTRADA Y PERSONALIZARLA
+  'TITULO URL': 'https://grove-lancer-801.notion.site/INDICAR EL ENLACE COMPLETO', //COPIAR ESTA LÍNEA POR CADA ENTRADA Y PERSONALIZARLA
+  'TITULO URL': 'https://grove-lancer-801.notion.site/INDICAR EL ENLACE COMPLETO', //COPIAR ESTA LÍNEA POR CADA ENTRADA Y PERSONALIZARLA
   'TITULO URL': 'https://grove-lancer-801.notion.site/INDICAR EL ENLACE COMPLETO', //COPIAR ESTA LÍNEA POR CADA ENTRADA Y PERSONALIZARLA
 };
+
+
 
 const ResourcePage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
