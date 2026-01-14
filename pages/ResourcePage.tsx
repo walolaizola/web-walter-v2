@@ -1,27 +1,26 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 
-//COPIAR EL ENLACE QUE ME DA NOTION quitando la parte de ?source=copy_link
-// Para acceder a la página de Notion es: walolaizola.com/recursos/TITULO DEL ENLACE QUE INDIQUÉ AQUÍ ABAJO => Ejemplo: walolaizola.com/recursos/prompts-data-leaders
-const NOTION_PAGES: Record<string, string> = {
-  'prompts-data-leaders': 'https://grove-lancer-801.notion.site/7-Prompts-para-Data-Leaders-Enero-2026-Post-Linkedin-2e6fa17bd8c6806a9db9e79605387142', //ANADIR 1 LINEA POR CADA ENTRADA
-  'prueba': 'https://grove-lancer-801.notion.site/Industrias-de-las-empresas-en-las-que-trabaj-2e1fa17bd8c680e2bb09ea391f82414e', //COPIAR ESTA LÍNEA POR CADA ENTRADA Y PERSONALIZARLA
-  'TITULO URL': 'https://grove-lancer-801.notion.site/INDICAR EL ENLACE COMPLETO', //COPIAR ESTA LÍNEA POR CADA ENTRADA Y PERSONALIZARLA
-  'TITULO URL2': 'https://grove-lancer-801.notion.site/INDICAR EL ENLACE COMPLETO', //COPIAR ESTA LÍNEA POR CADA ENTRADA Y PERSONALIZARLA
-  'TITULO URL3': 'https://grove-lancer-801.notion.site/INDICAR EL ENLACE COMPLETO', //COPIAR ESTA LÍNEA POR CADA ENTRADA Y PERSONALIZARLA
-  'TITULO URL4': 'https://grove-lancer-801.notion.site/INDICAR EL ENLACE COMPLETO', //COPIAR ESTA LÍNEA POR CADA ENTRADA Y PERSONALIZARLA
-  'TITULO URL5': 'https://grove-lancer-801.notion.site/INDICAR EL ENLACE COMPLETO', //COPIAR ESTA LÍNEA POR CADA ENTRADA Y PERSONALIZARLA
-  'TITULO URL6': 'https://grove-lancer-801.notion.site/INDICAR EL ENLACE COMPLETO', //COPIAR ESTA LÍNEA POR CADA ENTRADA Y PERSONALIZARLA
-  'TITULO URL7': 'https://grove-lancer-801.notion.site/INDICAR EL ENLACE COMPLETO', //COPIAR ESTA LÍNEA POR CADA ENTRADA Y PERSONALIZARLA
+// 1. DICCIONARIO MEJORADO: Ahora guardamos un objeto con Título y URL por cada ID
+const NOTION_PAGES: Record<string, { title: string; url: string }> = {
+  'prompts-data-leaders': {
+    title: 'Prompts para Data Leaders',
+    url: 'https://grove-lancer-801.notion.site/7-Prompts-para-Data-Leaders-Enero-2026-Post-Linkedin-2e6fa17bd8c6806a9db9e79605387142'
+  },
+  'prueba': {
+    title: 'Industrias y Sectores de Empresas',
+    url: 'https://grove-lancer-801.notion.site/Industrias-de-las-empresas-en-las-que-trabaj-2e1fa17bd8c680e2bb09ea391f82414e'
+  },
+  // PARA AÑADIR NUEVOS: Copia el formato de arriba (id, title y url)
 };
-
-
 
 const ResourcePage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const notionUrl = id ? NOTION_PAGES[id] : null;
+  
+  // Buscamos el objeto completo del recurso
+  const resource = id ? NOTION_PAGES[id] : null;
 
-  if (!notionUrl) {
+  if (!resource) {
     return (
       <div className="min-h-screen bg-[#050a18] text-white flex flex-col items-center justify-center p-6 text-center">
         <h1 className="text-2xl font-bold mb-4">Recurso no encontrado</h1>
@@ -32,7 +31,6 @@ const ResourcePage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#050a18] text-white flex flex-col items-center justify-center p-6">
-      {/* Tarjeta Central de Acceso */}
       <div className="max-w-2xl w-full bg-white/5 border border-white/10 p-8 md:p-12 rounded-3xl backdrop-blur-xl text-center shadow-2xl">
         <div className="mb-6 inline-block p-4 bg-cyan-500/10 rounded-2xl">
           <svg className="w-12 h-12 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -41,13 +39,15 @@ const ResourcePage: React.FC = () => {
         </div>
 
         <h1 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">Recurso Estratégico</h1>
+        
+        {/* AQUÍ ESTÁ EL CAMBIO: El título ahora es dinámico según el recurso */}
         <p className="text-white/60 text-lg mb-10 leading-relaxed">
-          Estás a un paso de acceder a la biblioteca de <span className="text-white font-semibold">Prompts para Data Leaders</span>.
+          Estás a un paso de acceder a la biblioteca de <span className="text-white font-semibold">{resource.title}</span>.
           Haz clic abajo para abrir el documento completo en Notion.
         </p>
 
         <a 
-          href={notionUrl} 
+          href={resource.url} 
           target="_blank" 
           rel="noopener noreferrer"
           className="inline-block w-full md:w-auto px-10 py-5 bg-cyan-500 text-black font-extrabold rounded-2xl hover:bg-cyan-400 transition-all transform hover:scale-105 shadow-lg shadow-cyan-500/20 uppercase tracking-wider"
